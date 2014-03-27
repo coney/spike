@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="HotelReservation" >
+  <!-- 定义路径和其他属性 -->
+  <property name="src.dir" location="src/main/java"></property>
+  <property name="build.dir" location="build"></property>
+  <property name="build.classes" location="build/classes"></property>
+  <property name="build.test.dir" location="build/test"></property>
+  <property name="build.test.classes" location="build/test/classes"></property>
+  <property name="build.test.report" location="build/test/report"></property>
+  <property name="test.src.dir" location="spec"></property>
+  <property name="compile-lib" location="lib"></property>
+  <!-- <property name="run.test.class" value="net.sparrow.OrderSpec"></property> -->
+  <property name="run.test.classes" value="**/*Spec.class"></property>
+
+  <!-- 在path下设置 类路径 fileset添加jar文件路径，不要使用pathelement（测试不好使）-->
+  <path id="compile-path">
+    <fileset dir="${compile-lib}" includes="*.jar"></fileset>
+  </path>
+  <path id="compile-test-path">
+    <path refid="compile-path"></path>
+    <pathelement location="${build.classes}"/>
+  </path>
+  <path id="run-test-path">
+    <path refid="compile-test-path"></path>
+    <pathelement location="${build.test.classes}" />
+  </path>
+
+  <!-- =============================================
+       target: default
+       ============================================= -->
+  <target name="init">
+    <echo>清理文件夹</echo>
+    <echo>${ant.version}</echo>
+    <delete dir="build"></delete>
+  </target>
+  <target name="mkdir" depends="init">
+    <echo>创建文件夹</echo>
+    <mkdir dir="${build.dir}"/>
+    <mkdir dir="${build.classes}"/>
+    <mkdir dir="${build.test.dir}"/>
+    <mkdir dir="${build.test.classes}"/>
+    <mkdir dir="${build.test.report}"/>
+  </target>
+
+  <target name="compile" depends="mkdir">
+    <echo>编译源代码</echo>
+    <javac destdir="${build.classes}" srcdir="${src.dir}" includeantruntime="true"></javac>
+  </target>
+
+  <target name="run" depends="compile">
+    <echo>运行源代码</echo>
+    <java classname="HotelReservationApp">
+      <classpath>
+        <pathelement path="${build.classes}"/>
+      </classpath>
+    </java>
+  </target>
+  
+  <target name="compile-test" depends="compile">
+    <echo>编译测试源代码</echo>
+    <javac srcdir="${test.src.dir}" destdir="${build.test.classes}" classpathref="compile-test-path" includeantruntime="true"></javac>
+  </target>
+
+  <target name="run-test" depends="compile-test">
+    <echo>运行单元测试</echo>
+    <junit printsummary="true"><!-- printsummary="true"设置显示出错信息 haltonfailure="true" halt on出错暂停 -->
+      <classpath refid="run-test-path"></classpath>
+      <formatter type="brief" usefile="false"/>
+      <formatter type="xml"/><!--设置输出为xml格式的-->
+      <!-- <test name="${run.test.class}"></test> -->
+      <!-- 进行单个类的测试运行，如果需要添加其他测试单元的话，直接增加test节点即可-->
+      <!-- 批量测试-->
+      <batchtest todir="${build.test.report}">
+        <fileset dir="${build.test.classes}" includes="${run.test.classes}"></fileset>
+      </batchtest>
+    </junit>
+    <!-- 测试报告生成命令，生成的是比较直观的html网页的格式 -->
+    <junitreport todir="${build.test.report}"><!--测试报告的生成路径；指的是TEST-TestSuites.xml的生成路径-->
+      <fileset dir="${build.test.report}" includes="*.xml"></fileset><!-- 指定要根据什么文件来生成测试报告 -->
+      <report format="frames" todir="${build.test.report}/html"/>
+    </junitreport>
+  </target>
+  <target name="end" depends="run-test">
+    <echo>构建完成</echo>
+  </target>
+</project>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
