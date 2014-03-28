@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project name="HotelReservation" >
   <!-- 定义路径和其他属性 -->
-  <property name="src.dir" location="src/main/java"></property>
+  <property name="src.dir" location="src"></property>
   <property name="build.dir" location="build"></property>
   <property name="build.classes" location="build/classes"></property>
   <property name="build.test.dir" location="build/test"></property>

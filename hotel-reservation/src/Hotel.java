@@ -49,10 +49,11 @@ public class Hotel implements IHotel {
         RateEntry rate = rateTable.get(customerType);
         for (Date date : reservedDates) {
             int dayOfWeek = getDayOfWeek(date);
-            if (dayOfWeek <= 5) {
-                price += rate.getWeekdayRates();
-            } else {
+            if (dayOfWeek == Calendar.SATURDAY || dayOfWeek == Calendar.SUNDAY) {
                 price += rate.getWeekendRates();
+            }
+            else {
+                price += rate.getWeekdayRates();
             }
         }
         return price;
