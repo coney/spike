@@ -3,7 +3,7 @@ import java.util.Date;
 import java.util.HashMap;
 import java.util.Locale;
 
-public class Hotel {
+public class Hotel implements IHotel {
 
     class RateEntry {
         private int weekdayRates;
@@ -23,7 +23,7 @@ public class Hotel {
         }
     }
 
-    private HashMap<CustomerType, RateEntry> rateTable = new HashMap<>();
+    private HashMap<CustomerType, RateEntry> rateTable = new HashMap<CustomerType, RateEntry>();
     private String name;
     private int rating;
 

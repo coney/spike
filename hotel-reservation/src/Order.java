@@ -10,7 +10,7 @@ public class Order {
 
     static Pattern orderPattern = Pattern.compile("^(Regular|Rewards): (.+)$");
 
-    private ArrayList<Date> reservedDates = new ArrayList<>();
+    private ArrayList<Date> reservedDates = new ArrayList<Date>();
 
     private CustomerType customerType;
 

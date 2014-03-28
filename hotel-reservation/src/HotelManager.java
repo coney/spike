@@ -2,9 +2,10 @@ import java.util.ArrayList;
 
 public class HotelManager {
 
-    private ArrayList<Hotel> hotels = new ArrayList<>();
-
-    public HotelManager() {
+    private ArrayList<IHotel> hotels = new ArrayList<IHotel>();
+    IHotelSelector selector;
+    public HotelManager(IHotelSelector selector) {
+        this.selector = selector;
         loadHotelsData();
     }
 
@@ -25,28 +26,13 @@ public class HotelManager {
         hotels.add(ridgewood);
     }
 
-    public Hotel handleOrder(Order order) {
-        Hotel currentHotel = null;
-        for (Hotel candidate : hotels) {
-            if (isBetter(currentHotel, candidate, order)) {
+    public IHotel handleOrder(Order order) {
+        IHotel currentHotel = null;
+        for (IHotel candidate : hotels) {
+            if (currentHotel == null || selector.isBetter(currentHotel, candidate, order)) {
                 currentHotel = candidate;
             }
         }
         return currentHotel;
     }
-
-    private Boolean isBetter(Hotel current, Hotel candidate, Order order) {
-        if (current == null) {
-            return true;
-        }
-
-        int currentPrice = current.getPrice(order.getCustomerType(), order.getReservedDates());
-        int candidatePrice = candidate.getPrice(order.getCustomerType(), order.getReservedDates());
-        if (candidatePrice != currentPrice) {
-            return candidatePrice < currentPrice;
-        } else {
-            return candidate.getRating() > current.getRating();
-        }
-    }
-
 }

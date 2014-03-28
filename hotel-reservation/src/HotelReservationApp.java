@@ -1,7 +1,7 @@
 public class HotelReservationApp {
     public static void main(String[] args) {
         try {
-            HotelManager hotelManager = new HotelManager();
+            HotelManager hotelManager = new HotelManager(new PriceRatingSelector());
 
             System.out.println(hotelManager.handleOrder(new Order(
                     "Regular: 16Mar2009(mon), 17Mar2009(tues), 18Mar2009(wed)"
