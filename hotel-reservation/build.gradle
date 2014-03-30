@@ -1,0 +1,43 @@
+version = '1.0'
+description = 'HotelReservationApp'
+
+apply plugin: 'java'
+apply plugin: 'maven'
+apply plugin:'application'
+
+mainClassName = "HotelReservationApp"
+
+repositories {
+	mavenCentral()
+}
+
+dependencies {
+	testCompile 'junit:junit:4.11'
+}
+
+dependencies {
+	compile fileTree (dir: 'lib', include: '*.jar')
+}
+
+// set path of the src path
+// contain 3 tasks: compileJava, processResources, classes
+sourceSets {
+	main {
+		java {  // the file set of Java code 
+			srcDir 'src'	
+		}
+	}
+}
+
+testClasses.dependsOn classes
+// set path of the test code
+// contain 3 tasks: compileTestJava, processTestResources, testClasses
+sourceSets {
+	test {
+		java {
+			srcDir 'spec'
+		}
+	}
+}
+
+
