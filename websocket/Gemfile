@@ -1,0 +1,7 @@
+source 'http://ruby.taobao.org'
+
+gem 'awesome_print'
+gem 'rack'
+gem 'em-websocket'
+gem 'sinatra'
+gem 'sinatra-websocket'
