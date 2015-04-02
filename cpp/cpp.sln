@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.31101.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "mock-static-function", "mock-static-function\mock-static-function.vcxproj", "{A4543710-4CFF-4E3D-A292-4F0CA7B60FF8}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "gmock", "gmock\gmock.vcxproj", "{D8F8F7B6-2E45-448C-87F7-9F6C4C75ABE9}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Win32 = Debug|Win32
+		Release|Win32 = Release|Win32
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{A4543710-4CFF-4E3D-A292-4F0CA7B60FF8}.Debug|Win32.ActiveCfg = Debug|Win32
+		{A4543710-4CFF-4E3D-A292-4F0CA7B60FF8}.Debug|Win32.Build.0 = Debug|Win32
+		{A4543710-4CFF-4E3D-A292-4F0CA7B60FF8}.Release|Win32.ActiveCfg = Release|Win32
+		{A4543710-4CFF-4E3D-A292-4F0CA7B60FF8}.Release|Win32.Build.0 = Release|Win32
+		{D8F8F7B6-2E45-448C-87F7-9F6C4C75ABE9}.Debug|Win32.ActiveCfg = Debug|Win32
+		{D8F8F7B6-2E45-448C-87F7-9F6C4C75ABE9}.Debug|Win32.Build.0 = Debug|Win32
+		{D8F8F7B6-2E45-448C-87F7-9F6C4C75ABE9}.Release|Win32.ActiveCfg = Release|Win32
+		{D8F8F7B6-2E45-448C-87F7-9F6C4C75ABE9}.Release|Win32.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
