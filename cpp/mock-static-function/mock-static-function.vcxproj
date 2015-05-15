@@ -15,6 +15,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="mock-static-function.cpp" />
+    <ClCompile Include="mockcpp-mocker.cpp" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <ProjectGuid>{A4543710-4CFF-4E3D-A292-4F0CA7B60FF8}</ProjectGuid>

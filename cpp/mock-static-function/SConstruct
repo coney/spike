@@ -1,4 +1,6 @@
 Program("mock-static-function", 
 	Glob("*.cpp") + Glob("gmock/*.cc"),
 	LIBS = ["pthread", "mockcpp"],
-	CPPPATH = ["gmock"])
+	CPPPATH = ["gmock"],
+	CXXFLAGS = ["-std=c++11", "-O0", "-g"]
+)
