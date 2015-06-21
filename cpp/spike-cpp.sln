@@ -7,6 +7,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "mock-static-function", "moc
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "gmock", "gmock\gmock.vcxproj", "{D8F8F7B6-2E45-448C-87F7-9F6C4C75ABE9}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "temp", "temp\temp.vcxproj", "{CFC0A9F7-B1BB-4FDD-AA1D-F3A532703D90}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Win32 = Debug|Win32
@@ -21,6 +23,10 @@ Global
 		{D8F8F7B6-2E45-448C-87F7-9F6C4C75ABE9}.Debug|Win32.Build.0 = Debug|Win32
 		{D8F8F7B6-2E45-448C-87F7-9F6C4C75ABE9}.Release|Win32.ActiveCfg = Release|Win32
 		{D8F8F7B6-2E45-448C-87F7-9F6C4C75ABE9}.Release|Win32.Build.0 = Release|Win32
+		{CFC0A9F7-B1BB-4FDD-AA1D-F3A532703D90}.Debug|Win32.ActiveCfg = Debug|Win32
+		{CFC0A9F7-B1BB-4FDD-AA1D-F3A532703D90}.Debug|Win32.Build.0 = Debug|Win32
+		{CFC0A9F7-B1BB-4FDD-AA1D-F3A532703D90}.Release|Win32.ActiveCfg = Release|Win32
+		{CFC0A9F7-B1BB-4FDD-AA1D-F3A532703D90}.Release|Win32.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
