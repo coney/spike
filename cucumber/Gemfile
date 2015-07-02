@@ -1,0 +1,7 @@
+source 'http://ruby.taobao.org/'
+
+gem 'cucumber'
+gem 'selenium-webdriver'
+gem 'chromedriver-helper'
+gem 'awesome_print'
+gem 'rspec'
