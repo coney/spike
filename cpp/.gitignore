@@ -1,2 +1,4 @@
 *.*sdf
 .sconsign.dblite
+Debug/
+VisualGDBCache/
