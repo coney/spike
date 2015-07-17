@@ -1,0 +1,12 @@
+wukun@SIA1000017809: ~/shared-test $ make testa testb                                                                                                                        [9:58:57]
+g++ -shared -fPIC a.so.cpp -o a.so
+g++ -shared -fPIC b.so.cpp -o b.so
+g++ main.cpp -o test-app a.so b.so
+LD_LIBRARY_PATH=. ./test-app
+this is a.so
+this is a.so
+g++ main.cpp -o test-app b.so a.so
+LD_LIBRARY_PATH=. ./test-app
+this is b.so
+this is b.so
+
